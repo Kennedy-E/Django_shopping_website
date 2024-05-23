@@ -1,27 +1,68 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Donken Global</title>
 </head>
-<body>
+
     <h1>
       DONKEN GLOBAL INVESTMENT LIMITED
     </h1>
 
 
     <ul>
-       <li><a href="#">Building Tools</a></li>
+       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Optional CSS for custom styling */
+    .dropdown-item img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+
+  <div class="container mt-5">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false", >
+        Select Option
+      </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">
+              <img src="Images/tape.jpg" alt="Option 1">
+              Building Tools
+            </a>
+            <a class="dropdown-item" href="#">
+              <img src="Images/tape.jpg" alt="Option 2">
+              Plumbing Materials
+            </a>
+            <a class="dropdown-item" href="#">
+              <img src="Images/tape.jpg" alt="Option 3">
+              Option 3
+            </a>
+          </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery (required for Bootstrap dropdown) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>
        <li><a href="#">Plumbing Materials</a></li>
        <li><a href="#">New Releases</a></li>
        <li><a href="#">China Goods</a></li>
        <li><a href="#">Best Selling</a></li>
+        <li><a href="{% url 'Delivery:about_us'%}">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
     </ul>
 
 
     <h1>
-        
+
     </h1>
 
 

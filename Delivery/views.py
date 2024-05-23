@@ -9,3 +9,6 @@ from .models import Goods
 
 def home(request):
     return render(request, 'Delivery/home.html')
+
+def about_us(request):
+    return render(request, "Delivery/about_us.html")
