@@ -4,68 +4,631 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Donken Global</title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DONEKN GLOBAL</title>
+    <!-- Include Bootstrap CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
 
-    <h1>
-      DONKEN GLOBAL INVESTMENT LIMITED
-    </h1>
+      <!-- style css -->
+
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+      <!-- Responsive-->{% block css %}
+                            <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+                        {% endblock css %}
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Apply background image */
+        body {
+
+            background-size: cover; /* Cover the entire element */
+            background-position: center; /* Center the image */
+            height: 100vh; /* Set full height */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+
+    </style>
+    <style>
+        /* CSS styles can be added here or in an external stylesheet */
+        .header {
+            background-image: url('../static/images/equip2.jpg');
+            /* Adjust background image properties */
+            background-size: cover; /* Cover the entire header box */
+            background-position: center; /* Center the background image */
+            width: 100%; /* Set the width to 100% */
+            height: 400px; /* Set the height to 100 pixels */
+
+            color: #8ea2a8; /* Text color */
+            padding: 0; /* Padding around the header content */
+            text-align: center; /* Align header content to the center */
+            position: relative;
+
+        }
+
+        .header img {
+            position: absolute;
+            top: 0;
+            left: 90px;
+        }
 
 
-    <ul>
-       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Optional CSS for custom styling */
-    .dropdown-item img {
-      width: 30px;
-      height: 30px;
-      margin-right: 10px;
+
+
+
+        /* Styles for the header top content */
+        .header-top-content {
+            color: #8ea2a8; /* Text color */
+        }
+        .custom_menu h1 {
+            /* Add your styles here */
+            font-size: 30px; /* Example font size */
+            color: #bb6b11;; /* Example color */
+            font-weight: bold;
+            /* Add any other styles you want */
+        }
+        .custom_menu h1 .company-name {
+            /* Add styles specific to "Donken Global Investment" here */
+        }
+        .heading_style {
+        width: 100%
+        font-size: 40px;
+        color: #bb6b11;
+        text-align: center;
+        font-weight: bold;
+        }
+    </style>
+   <style>
+    /* Custom styles for sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      padding: 48px 0 0;
+      box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+      background-color: #f8f9fa;
+      color: #fff;
+      transition: all 0.3s ease;
+      width: 150px;
     }
-  </style>
+
+    .collapsed-sidebar {
+      width: 0;
+      overflow-x: hidden;
+    }
+
+    .sidebar-sticky {
+      position: relative;
+      top: 0;
+      height: calc(100vh - 48px);
+      padding-top: .5rem;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    .sidebar-heading {
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      color: #bb6b11;
+    }
+    .sidebar .nav-link {
+      font-weight: 500;
+      color: #bb6b11;
+    }
+    .sidebar .nav-link:hover {
+      color: #1C1C1B;
+    }
+
+    .sidebar.closed {
+        display: none;
+    }
+
+    .toggle-icon {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      z-index: 101; /* Ensure the icon appears above the sidebar */
+      font-weight: 10000;
+    }
+
+         @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');
+
+     * {
+         margin: 0;
+         padding: 0;
+         -webkit-font-smoothing: antialiased;
+         -webkit-text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+         text-shadow: rgba(0, 0, 0, .01) 0 0 1px
+     }
+
+     body {
+         font-family: 'Rubik', sans-serif;
+         font-size: 14px;
+         font-weight: 400;
+         background: #eff6fa;
+         color: #000000
+     }
+
+     div {
+         display: block;
+         position: relative;
+         -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+         box-sizing: border-box
+     }
+
+
+
+
+     .bbb_viewed {
+         padding-top: 51px;
+         padding-bottom: 60px;
+         background: #fff;
+     }
+
+     .bbb_main_container{
+             background-color: #fff;
+        padding: 11px;
+     }
+
+     .bbb_viewed_title_container {
+         border-bottom: solid 1px #dadada
+     }
+
+     .bbb_viewed_title {
+             margin-bottom: 16px;
+        margin-top: 8px;
+
+     }
+
+     .bbb_viewed_nav_container {
+         position: absolute;
+         right: -5px;
+         bottom: 14px
+     }
+
+     .bbb_viewed_nav {
+         display: inline-block;
+         cursor: pointer
+     }
+
+     .bbb_viewed_nav i {
+         color: #dadada;
+         font-size: 18px;
+         padding: 5px;
+         -webkit-transition: all 200ms ease;
+         -moz-transition: all 200ms ease;
+         -ms-transition: all 200ms ease;
+         -o-transition: all 200ms ease;
+         transition: all 200ms ease
+     }
+
+     .bbb_viewed_nav:hover i {
+         color: #606264
+     }
+
+     .bbb_viewed_prev {
+         margin-right: 15px
+     }
+
+     .bbb_viewed_slider_container {
+         padding-top: 13px;
+     }
+
+     .bbb_viewed_item {
+         width: 100%;
+         background: #FFFFFF;
+         border-radius: 2px;
+         padding-top: 25px;
+         padding-bottom: 25px;
+         padding-left: 30px;
+         padding-right: 30px
+     }
+
+     .bbb_viewed_image {
+             width: 150px;
+        height: 150px;
+     }
+
+     .bbb_viewed_image img {
+         display: block;
+         max-width: 100%
+     }
+
+     .bbb_viewed_content {
+         width: 100%;
+         margin-top: 25px
+     }
+
+     .bbb_viewed_price {
+         font-size: 16px;
+         color: #000000;
+         font-weight: 500
+     }
+
+     .bbb_viewed_item.discount .bbb_viewed_price {
+         color: #df3b3b
+     }
+
+     .bbb_viewed_price span {
+         position: relative;
+         font-size: 12px;
+         font-weight: 400;
+         color: rgba(0, 0, 0, 0.6);
+         margin-left: 8px
+     }
+
+     .bbb_viewed_price span::after {
+         display: block;
+         position: absolute;
+         top: 6px;
+         left: -2px;
+         width: calc(100% + 4px);
+         height: 1px;
+         background: #8d8d8d;
+         content: ''
+     }
+
+     .bbb_viewed_name {
+         margin-top: 3px
+     }
+
+     .bbb_viewed_name a {
+         font-size: 14px;
+         color: #000000;
+         -webkit-transition: all 200ms ease;
+         -moz-transition: all 200ms ease;
+         -ms-transition: all 200ms ease;
+         -o-transition: all 200ms ease;
+         transition: all 200ms ease
+     }
+
+     .bbb_viewed_name a:hover {
+         color: #0e8ce4
+     }
+
+     .item_marks {
+         position: absolute;
+         top: 18px;
+         left: 18px
+     }
+
+     .item_mark {
+         display: none;
+         width: 36px;
+         height: 36px;
+         border-radius: 50%;
+         color: #FFFFFF;
+         font-size: 10px;
+         font-weight: 500;
+         line-height: 36px;
+         text-align: center
+     }
+
+     .item_discount {
+         background: #df3b3b;
+         margin-right: 5px
+     }
+
+     .item_new {
+         background: #0e8ce4
+     }
+
+     .bbb_viewed_item.discount .item_discount {
+         display: inline-block
+     }
+
+     .bbb_viewed_item.is_new .item_new {
+         display: inline-block
+     }
+     body{
+
+        background-color: #2b2a29;
+    }
+
+
+    .advanced{
+
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+
+    .btn-secondary,
+    .btn-secondary:focus,
+    .btn-secondary:active
+
+
+     {
+        color: #fff;
+        background-color: #2b2a29;
+        border-color: #2b2a29; !important;
+        box-shadow: none;
+    }
+
+    .advanced{
+
+        color: #00838f !important;
+    }
+
+    .form-control:focus{
+        box-shadow: none;
+        border: 1px solid #00838f;
+
+
+    }
+
+   </style>
 </head>
+<body>
 
 
-  <div class="container mt-5">
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false", >
-        Select Option
-      </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">
-              <img src="Images/tape.jpg" alt="Option 1">
-              Building Tools
-            </a>
-            <a class="dropdown-item" href="#">
-              <img src="Images/tape.jpg" alt="Option 2">
-              Plumbing Materials
-            </a>
-            <a class="dropdown-item" href="#">
-              <img src="Images/tape.jpg" alt="Option 3">
-              Option 3
-            </a>
-          </div>
+<div class="header">
+    <div class="container">
+
+            <div class="header_section_top">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="custom_menu">
+                        <h1><span class="company-name">Donken Global Investment</span></h1>
+                        <ul>
+                            <img src="../static/images/don_logo2.png" alt="Your Logo" width="130" height="80" title="Company Logo">
+
+                           <li><a href="#">Drilling Machines</a></li>
+                           <li><a href="#">Plumbing</a></li>
+                           <li><a href="#">Ladders</a></li>
+                           <li><a href="#">Cutting Machines</a></li>
+                            <li><a href="#">
+                              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                              <span class="padding_10">Cart</span></a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+<!--<div class="container mt-5">-->
+
+
+        <div class="col-md-10">
+
+<!--            <div class="card p-3  py-4">-->
+
+
+                    <div class="row g-3 mt-2">
+
+                        <div class="col-md-3">
+
+                            <div class="dropdown">
+                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                All Category
+                              </button>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">All</a></li>
+                                <li><a class="dropdown-item" href="#">Drilling</a></li>
+                                <li><a class="dropdown-item" href="#">Plumbing</a></li>
+                                <li><a class="dropdown-item" href="#">Machines</a></li>
+                              </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <input type="text" class="form-control" placeholder="Search Product">
+
+                        </div>
+
+                            <div class="col-md-3">
+
+                                <button class="btn btn-secondary btn-block">Search</button>
+
+                            </div>
+
+                    </div>
+<!--            </div>-->
+        </div>
+<!--</div>-->
+
+    <div class="col-sm-12">
+          <h1 class="banner_taital"></h1>
+          <div class="buynow_bt"><a href="#">Buy Now</a></div>
+      </div>
+
+</div>
+
+
+
+    <nav id="sidebar" class="sidebar closed">
+                                   <img src="../static/images/don_logo3.png" alt="Your Logo" width="100" height="50" title="Company Logo">
+
+    <div class="sidebar-sticky">
+
+      <h3 class="sidebar-heading">DONKEN</h3>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'Delivery:home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'Delivery:about_us'%}">About</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+            <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <a class="dropdown-item" href="#">Service 1</a>
+                <a class="dropdown-item" href="#">Service 2</a>
+                <a class="dropdown-item" href="#">Service 3</a>
+
+            </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
     </div>
-  </div>
+  </nav>
 
-  <!-- Bootstrap JS and jQuery (required for Bootstrap dropdown) -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<i class="fas fa-bars toggle-icon" onclick="toggleSidebar()"></i>
+
+  <main role="main" class="container">
+
+
+    <!-- Content here -->
+
+
+  </main>
+{% block content %}
+
+
+{% endblock %}
+
+
+ <div class="footer_section layout_padding">
+         <div class="container">
+            <div class="input_bt">
+            <div class="footer_logo"><a href="home.html"><img src="../static/images/don_logo2.png"width="100" height="50"></a></div>
+            </div>
+            <div class="footer_menu">
+               <ul>
+                  <li><a href="#">Best Sellers</a></li>
+                  <li><a href="#">New Releases</a></li>
+                  <li><a href="#">Today's Deals</a></li>
+                  <li><a href="#">Customer Service</a></li>
+               </ul>
+            </div>
+            <div class="location_main">Help Line  Number : <a href="#">+234 8065387369</a></div>
+         </div>
+      </div>
+      <!-- footer section end -->
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text">© 2024 All Rights Reserved. Design by <a href="https://html.design">Kennedy Esther</a></p>
+         </div>
+      </div>
+
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </div>
-       <li><a href="#">Plumbing Materials</a></li>
-       <li><a href="#">New Releases</a></li>
-       <li><a href="#">China Goods</a></li>
-       <li><a href="#">Best Selling</a></li>
-        <li><a href="{% url 'Delivery:about_us'%}">About Us</a></li>
-        <li><a href="#">Contact Us</a></li>
-    </ul>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-
-    <h1>
-
-    </h1>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.7.2/css/all.css"></script>
 
 
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
+
+
+
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("collapsed-sidebar");
+    }
+  </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Check if the sidebar has the "closed" class
+    if (!localStorage.getItem("sidebarStatus")) {
+        // If localStorage doesn't have the "sidebarStatus" item, set it to "closed"
+        localStorage.setItem("sidebarStatus", "closed");
+    }
+
+    // Check the value of the "sidebarStatus" item in localStorage
+    if (localStorage.getItem("sidebarStatus") === "closed") {
+        // If it's closed, add the "closed" class to hide it
+        document.getElementById("sidebar").classList.add("closed");
+    } else {
+        // If it's open, remove the "closed" class to display it
+        document.getElementById("sidebar").classList.remove("closed");
+    }
+});
+
+// Function to toggle the sidebar state
+function toggleSidebar() {
+    var sidebar = document.getElementById("sidebar");
+    if (sidebar.classList.contains("closed")) {
+        sidebar.classList.remove("closed");
+        localStorage.setItem("sidebarStatus", "open");
+    } else {
+        sidebar.classList.add("closed");
+        localStorage.setItem("sidebarStatus", "closed");
+    }
+}</script>
+
+<script>
+    $(document).ready(function()
+{
+
+
+        if($('.bbb_viewed_slider').length)
+        {
+            var viewedSlider = $('.bbb_viewed_slider');
+
+            viewedSlider.owlCarousel(
+            {
+                loop:true,
+                margin:30,
+                autoplay:true,
+                autoplayTimeout:6000,
+                nav:false,
+                dots:false,
+                responsive:
+                {
+                    0:{items:1},
+                    575:{items:2},
+                    768:{items:3},
+                    991:{items:4},
+                    1199:{items:6}
+                }
+            });
+
+            if($('.bbb_viewed_prev').length)
+            {
+                var prev = $('.bbb_viewed_prev');
+                prev.on('click', function()
+                {
+                    viewedSlider.trigger('prev.owl.carousel');
+                });
+            }
+
+            if($('.bbb_viewed_next').length)
+            {
+                var next = $('.bbb_viewed_next');
+                next.on('click', function()
+                {
+                    viewedSlider.trigger('next.owl.carousel');
+                });
+            }
+        }
+
+
+    });
+</script>
 </body>
 </html>
